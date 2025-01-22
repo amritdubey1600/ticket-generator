@@ -1,7 +1,9 @@
+import Form from "./Components/Form";
+
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Form />
     </>
   );
 }
