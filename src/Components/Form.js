@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { UploadArea } from './styled/UploadArea.styled';
 import { Avatar } from './styled/Avatar.styled';
 
-export default function Form() {
+export default function Form({getData}) {
     const [image,setImage]=useState(null);
     const [err,setErr]=useState("");
 
@@ -52,12 +52,17 @@ export default function Form() {
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const formData={image,name,mail,gitId};
+        getData({image,name,mail,gitId});
     }
 
     return (
     <div>
-        <form>
+        <h2>
+            Your Journey to Coding Conf 2025 Starts Here!
+            Secure your spot at next year's biggest coding conference.
+        </h2>
+
+        <form onSubmit={handleSubmit}>
             <label>Upload Avatar</label>
             <UploadArea
                 onDrop={handleDrop}
@@ -91,7 +96,7 @@ export default function Form() {
             <label>Github Username</label>
             <input type="text" value={gitId} onChange={(e)=>setGitId(e.target.value)}/>
 
-            <button>Generate My Ticket</button>
+            <button type='submit'>Generate My Ticket</button>
         </form>
     </div>
   )
