@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { UploadArea } from './styled/UploadArea.styled';
 import { Avatar } from './styled/Avatar.styled';
+import { ChildContainer } from './styled/ChildConatiner.styled';
+import { Input } from './styled/Input.styled';
+import { ImageButton } from './styled/ImageButton.styled';
+import { SubmitButton } from './styled/SubmitButton.styled';
 
 export default function Form({getData}) {
     const [image,setImage]=useState(null);
@@ -50,17 +54,25 @@ export default function Form({getData}) {
         handleFileInput(e.dataTransfer.files[0]);
     }
 
+    const removeImage=(e)=>{
+        e.stopPropagation();
+        setImage(null);
+    }
+
     const handleSubmit=(e)=>{
         e.preventDefault();
         getData({image,name,mail,gitId});
     }
 
     return (
-    <div>
+    <ChildContainer>
         <h2>
             Your Journey to Coding Conf 2025 Starts Here!
-            Secure your spot at next year's biggest coding conference.
         </h2>
+
+        <p>
+            Secure your spot at next year's biggest coding conference.
+        </p>    
 
         <form onSubmit={handleSubmit}>
             <label>Upload Avatar</label>
@@ -72,7 +84,14 @@ export default function Form({getData}) {
                 {image?
                 <>
                     <Avatar src={image} />
-                    <button onClick={()=>document.getElementById("fileInput").click()}>Change Image</button>
+                    <div>
+                        <ImageButton onClick={removeImage}>Remove Image</ImageButton>
+                        <ImageButton type='button' 
+                        onClick={(e)=>{
+                            document.getElementById("fileInput").click();
+                            e.stopPropagation();
+                        }}>Change Image</ImageButton>
+                    </div>
                 </>
                 :<p>Drag and drop or click to upload</p>}
             </UploadArea>
@@ -88,16 +107,16 @@ export default function Form({getData}) {
             {err && <p>{err}</p>}
             
             <label>Full Name</label>
-            <input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
+            <Input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
 
             <label>Email Address</label>
-            <input type="email" value={mail} onChange={(e)=>setMail(e.target.value)}/>
+            <Input type="email" value={mail} onChange={(e)=>setMail(e.target.value)}/>
 
             <label>Github Username</label>
-            <input type="text" value={gitId} onChange={(e)=>setGitId(e.target.value)}/>
+            <Input type="text" value={gitId} onChange={(e)=>setGitId(e.target.value)}/>
 
-            <button type='submit'>Generate My Ticket</button>
+            <SubmitButton type='submit'>Generate My Ticket</SubmitButton>
         </form>
-    </div>
+    </ChildContainer>
   )
 }
