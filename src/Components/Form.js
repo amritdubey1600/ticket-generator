@@ -4,6 +4,7 @@ import { Avatar } from './styled/Avatar.styled';
 import { ChildContainer } from './styled/ChildConatiner.styled';
 import { Input } from './styled/Input.styled';
 import { ImageButton } from './styled/ImageButton.styled';
+import { HeroTextContainer } from './styled/HeroTextContainer.styled';
 import { SubmitButton } from './styled/SubmitButton.styled';
 
 export default function Form({getData}) {
@@ -66,9 +67,9 @@ export default function Form({getData}) {
 
     return (
     <ChildContainer>
-        <h2>
+        <HeroTextContainer>
             Your Journey to Coding Conf 2025 Starts Here!
-        </h2>
+        </HeroTextContainer>
 
         <p>
             Secure your spot at next year's biggest coding conference.

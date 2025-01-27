@@ -1,5 +1,5 @@
 import { GlobalStyle } from "./Components/styled/Global";
-import Home from "./Home";
+import Home from "./Pages/Home";
 
 function App() {
   return (
