@@ -9,7 +9,8 @@ export const ChildContainer=styled.div`
     & > p.subTitle{
         font-size: medium;
         letter-spacing: 2px;
-        margin-bottom: 40px;
+        margin: 40px;
+        max-width: 550px;
         text-align: center;
         opacity: 0.8;
     }

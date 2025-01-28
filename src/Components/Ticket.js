@@ -10,7 +10,7 @@ const Ticket = ({formData}) => {
   return (
     <ChildContainer>
       <HeroTextContainer>
-        Congrats, {name}! Your ticket is ready.
+        Congrats, <em className='name'>{name}</em>! Your ticket is ready.
       </HeroTextContainer>
 
       <p className='subTitle'>

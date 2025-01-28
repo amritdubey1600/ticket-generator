@@ -75,8 +75,15 @@ export const GlobalStyle=createGlobalStyle`
     }
 
     em.mail{
-        /* color: ${({ theme }) => theme.colors.orange700}; */
+        color: ${({ theme }) => theme.colors.orange700};
         font-weight: bold;
-        color: hsl(7, 71%, 60%);
+        font-style: normal;
+    }
+
+    em.name{
+        font-style: normal;
+        background: linear-gradient(90deg,hsl(7, 86%, 67%),hsl(0, 0%, 100%));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 `
