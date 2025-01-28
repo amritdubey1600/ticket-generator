@@ -9,4 +9,8 @@ export const Input=styled.input`
     height: 40px;
     margin: 8px 0 21px;
     padding-left: 10px;
+
+    @media (max-width: ${({theme})=>theme.mobile}) {
+        width: 340px;
+    }
 `

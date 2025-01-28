@@ -13,5 +13,9 @@ export const ChildContainer=styled.div`
         max-width: 550px;
         text-align: center;
         opacity: 0.8;
+
+        @media (max-width: ${({theme})=>theme.mobile}) {
+            width: 340px;
+        }
     }
 `

@@ -28,4 +28,8 @@ export const UploadArea=styled.div`
         letter-spacing: 2px;
         font-size: smaller;
     }
+
+    @media (max-width: ${({theme})=>theme.mobile}) {
+        width: 340px;
+    }
 `

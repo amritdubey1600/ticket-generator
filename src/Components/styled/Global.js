@@ -41,7 +41,12 @@ export const GlobalStyle=createGlobalStyle`
         url("/assets/images/pattern-lines.svg"),
         url("/assets/images/background-desktop.png");
         background-repeat:no-repeat;
-        background-position:top 25px right,bottom left,center,center;
+        background-position:top right,bottom left,center,center;
+
+        
+        @media (max-width: ${({theme})=>theme.mobile}) {
+           background-size: 160px,240px,auto,auto;
+        }
     }
 
     h1,h2,h3,h4{
@@ -60,6 +65,10 @@ export const GlobalStyle=createGlobalStyle`
         font-size: small;
         margin-bottom: 25px;
         opacity: 0.8;
+
+        @media (max-width: ${({theme})=>theme.mobile}) {
+            margin-bottom: 5px;
+        }
     }
 
     span > div{
@@ -85,5 +94,15 @@ export const GlobalStyle=createGlobalStyle`
         background: linear-gradient(90deg,hsl(7, 86%, 67%),hsl(0, 0%, 100%));
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .printIcon{
+        margin: 0 5px;
+    }
+
+    div.inputFields{
+        @media (max-width: ${({theme})=>theme.mobile}) {
+            margin-top: 20px;
+        }
     }
 `

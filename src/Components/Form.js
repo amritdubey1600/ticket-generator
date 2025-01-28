@@ -131,16 +131,18 @@ export default function Form({getData}) {
                 <div>{err}</div>
             </span>}
             
-            <label>Full Name</label>
-            <Input type="text" required  value={name} onChange={(e)=>setName(e.target.value)}/>
+            <div className='inputFields'>
+                <label>Full Name</label>
+                <Input type="text" required  value={name} onChange={(e)=>setName(e.target.value)}/>
 
-            <label>Email Address</label>
-            <Input type="email" required placeholder="example@email.com" value={mail} onChange={(e)=>setMail(e.target.value)}/>
+                <label>Email Address</label>
+                <Input type="email" required placeholder="example@email.com" value={mail} onChange={(e)=>setMail(e.target.value)}/>
 
-            <label>Github Username</label>
-            <Input type="text" required placeholder="@yourusername" value={gitId} onChange={(e)=>setGitId(e.target.value)}/>
+                <label>Github Username</label>
+                <Input type="text" required placeholder="@yourusername" value={gitId} onChange={(e)=>setGitId(e.target.value)}/>
 
-            <SubmitButton type='submit'>Generate My Ticket</SubmitButton>
+                <SubmitButton type='submit'>Generate My Ticket</SubmitButton>
+            </div>
         </form>
     </ChildContainer>
   )

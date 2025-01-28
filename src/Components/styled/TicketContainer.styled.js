@@ -24,4 +24,10 @@ export const TicketContainer=styled.div`
     div.names > h3{
         margin-bottom: 5px;
     }
+
+    @media (max-width: ${({theme})=>theme.mobile}) {
+        width: 340px;
+        height: 175px;
+        padding: 8px;
+    }
 `

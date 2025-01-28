@@ -6,7 +6,8 @@ const theme={
   colors:{
     orange500:"hsl(7, 88%, 67%)",
     orange700:"hsl(7, 71%, 60%)"
-  }
+  },
+  mobile: "768px"
 };
 
 function App() {

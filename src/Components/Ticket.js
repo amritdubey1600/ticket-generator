@@ -3,9 +3,22 @@ import { Avatar } from './styled/Avatar.styled';
 import { ChildContainer } from './styled/ChildConatiner.styled';
 import { TicketContainer } from './styled/TicketContainer.styled';
 import { HeroTextContainer } from './styled/HeroTextContainer.styled';
+import { PrintButton } from './styled/PrintButton.styled';
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Ticket = ({formData}) => {
   const {image,name,mail,gitId}=formData;
+
+  const handlePrint=()=>{
+    const printContent=document.getElementById('ticket-container').innerHTML;
+    const originalContent=document.body.innerHTML;
+
+    document.body.innerHTML=printContent;
+    window.print();
+
+    document.body.innerHTML=originalContent;
+  }
   
   return (
     <ChildContainer>
@@ -17,7 +30,7 @@ const Ticket = ({formData}) => {
         We've emailed your ticket to <em className='mail'>{mail}</em> and will send updates in the run up to the event.
       </p>
 
-      <TicketContainer>
+      <TicketContainer id="ticket-container">
         <div>
           <div className='header'>
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40">
@@ -40,8 +53,12 @@ const Ticket = ({formData}) => {
             </span>
           </div>
         </div>
-        
       </TicketContainer>
+
+      <PrintButton onClick={handlePrint}>
+        <FontAwesomeIcon className='printIcon' icon={faPrint}/>Print
+      </PrintButton>
+      
     </ChildContainer>
   )
 }

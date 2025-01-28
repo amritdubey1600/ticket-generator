@@ -6,4 +6,9 @@ export const HeroTextContainer=styled.div`
     font-size: 50px;
     margin-bottom: 10px;
     text-align: center;
+
+    @media (max-width: ${({theme})=>theme.mobile}) {
+        font-size: 30px;
+        max-width: 340px;
+    }
 `
