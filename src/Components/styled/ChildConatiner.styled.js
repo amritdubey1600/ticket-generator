@@ -5,4 +5,12 @@ export const ChildContainer=styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    & > p.subTitle{
+        font-size: medium;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        text-align: center;
+        opacity: 0.8;
+    }
 `

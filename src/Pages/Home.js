@@ -15,7 +15,7 @@ const Home = () => {
 
     return (
         <Container>
-            <h2><Logo />Conding Conf</h2>
+            <Logo />
             {!flag && <Form getData={getData}/>}
             {flag && <Ticket formData={formData}/>}
         </Container>

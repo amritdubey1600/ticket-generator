@@ -40,7 +40,6 @@ export const GlobalStyle=createGlobalStyle`
         url("/assets/images/pattern-squiggly-line-bottom.svg"),
         url("/assets/images/pattern-lines.svg"),
         url("/assets/images/background-desktop.png");
-        background-size:auto,auto,cover,cover;
         background-repeat:no-repeat;
         background-position:top 25px right,bottom left,center,center;
     }
@@ -52,10 +51,32 @@ export const GlobalStyle=createGlobalStyle`
     label{
         font-family: 'Inconsolata-Regular', sans-serif;
         font-size: normal;
-        margin: 5px;
+    }
+
+    span{
+        display: flex;
+        align-items: center;
+        font-family: 'Inconsolata-Regular', sans-serif;
+        font-size: small;
+        margin-bottom: 25px;
+        opacity: 0.8;
+    }
+
+    span > div{
+        margin-left: 4px;
+    }
+
+    span.error > div{
+        color: red;
     }
 
     p{
         font-family: 'Inconsolata-Medium', sans-serif;
+    }
+
+    em.mail{
+        /* color: ${({ theme }) => theme.colors.orange700}; */
+        font-weight: bold;
+        color: hsl(7, 71%, 60%);
     }
 `
