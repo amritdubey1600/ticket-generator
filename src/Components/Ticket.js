@@ -7,13 +7,12 @@ import { PrintButton } from './styled/PrintButton.styled';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Ticket = ({formData,printData}) => {
+const Ticket = ({formData}) => {
   const {image,name,mail,gitId}=formData;
 
   const handlePrint=()=>{
     // media query in global css handles the printing logic
     window.print();
-    printData();
   }
   
   return (
