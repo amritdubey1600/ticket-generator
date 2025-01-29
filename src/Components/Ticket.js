@@ -11,14 +11,8 @@ const Ticket = ({formData}) => {
   const {image,name,mail,gitId}=formData;
 
   const handlePrint=()=>{
-    const printContent=document.getElementById('ticket-container').innerHTML;
-    const originalContent=document.body.innerHTML;
-
-    document.body.innerHTML=printContent;
+    // media query in global css handles the printing logic
     window.print();
-
-    document.body.innerHTML=originalContent;
-    window.location.reload();
   }
   
   return (

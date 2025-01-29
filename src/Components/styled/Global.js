@@ -105,4 +105,19 @@ export const GlobalStyle=createGlobalStyle`
             margin-top: 20px;
         }
     }
+
+    @media print {
+        body * {
+        visibility: hidden; /* Hides everything */
+        }
+        #ticket-container,
+        #ticket-container * {
+        visibility: visible; /* Makes the ticket visible */
+        }
+        #ticket-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    }
 `
