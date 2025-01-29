@@ -13,6 +13,7 @@ const Ticket = ({formData}) => {
   const handlePrint=()=>{
     // media query in global css handles the printing logic
     window.print();
+    window.location.reload();
   }
   
   return (
