@@ -18,6 +18,7 @@ const Ticket = ({formData}) => {
     window.print();
 
     document.body.innerHTML=originalContent;
+    window.location.reload();
   }
   
   return (
