@@ -13,11 +13,15 @@ const Home = () => {
         setFlag(true);
     }
 
+    const getHome=()=>{
+        setFlag(false);
+    }
+
     return (
         <Container>
             <Logo />
             {!flag && <Form getData={getData}/>}
-            {flag && <Ticket formData={formData}/>}
+            {flag && <Ticket formData={formData} getHome={getHome}/>}
         </Container>
     );
 }

@@ -100,6 +100,10 @@ export const GlobalStyle=createGlobalStyle`
         margin: 0 5px;
     }
 
+    .homeIcon{
+        margin: 0 3px;
+    }
+
     div.inputFields{
         @media (max-width: ${({theme})=>theme.mobile}) {
             margin-top: 20px;

@@ -4,15 +4,20 @@ import { ChildContainer } from './styled/ChildConatiner.styled';
 import { TicketContainer } from './styled/TicketContainer.styled';
 import { HeroTextContainer } from './styled/HeroTextContainer.styled';
 import { PrintButton } from './styled/PrintButton.styled';
-import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ButtonContainer } from './styled/ButtonContainer.styled';
 
-const Ticket = ({formData}) => {
+const Ticket = ({formData,getHome}) => {
   const {image,name,mail,gitId}=formData;
 
   const handlePrint=()=>{
     // media query in global css handles the printing logic
     window.print();
+  }
+
+  const handleHome=()=>{
+    getHome();
   }
   
   return (
@@ -50,9 +55,15 @@ const Ticket = ({formData}) => {
         </div>
       </TicketContainer>
 
-      <PrintButton onClick={handlePrint}>
-        <FontAwesomeIcon className='printIcon' icon={faPrint}/>Print
-      </PrintButton>
+      <ButtonContainer>
+        <PrintButton onClick={handlePrint}>
+          <FontAwesomeIcon className='printIcon' icon={faPrint}/>Print
+        </PrintButton>
+
+        <PrintButton onClick={handleHome}>
+          <FontAwesomeIcon className='homeIcon' icon={faHome}/>Home
+        </PrintButton>
+      </ButtonContainer>
       
     </ChildContainer>
   )
