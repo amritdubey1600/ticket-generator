@@ -101,7 +101,8 @@ export const GlobalStyle=createGlobalStyle`
     }
 
     .homeIcon{
-        margin: 0 3px;
+        padding: 2px 0;
+        margin: 0 4px 0 3px;
     }
 
     div.inputFields{
